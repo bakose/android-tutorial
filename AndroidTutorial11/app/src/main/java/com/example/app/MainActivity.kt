@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity() {
             d("jay", "Changed! $isChecked")
             if (isChecked) {
                 button.visibility = View.VISIBLE
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.ourFrameLayout, FirstFragment())
+                    .commit()
             } else {
                 button.visibility = View.GONE
             }
